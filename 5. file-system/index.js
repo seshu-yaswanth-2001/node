@@ -23,10 +23,10 @@ console.log(fs.readFileSync(file, "utf8"));
 const asyncFile = path.join(dataFolder, "asyncFile");
 fs.writeFile(asyncFile, "Hello from async node js", (err) => {
     if(err) throw new err;
-    console.log("File Created!");
+    console.log("File Created!"); 
 
     fs.readFile(asyncFile, "utf8", (err, data) => {
-        if(err) throw new err;
+        if(err) throw err;
         console.log("async read: ", data);
 
         fs.appendFile(asyncFile, "\nThis is a new line from the async node js", (err) => {
